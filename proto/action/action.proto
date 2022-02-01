@@ -12,7 +12,7 @@ enum ActionType {
 message ActionRequest {
   ActionType type = 1;
   oneof Request_OneOf {
-    DeployRequest deploy_req = 2;
+    DeployRequest req_deploy = 2;
   }
 
   message DeployRequest {

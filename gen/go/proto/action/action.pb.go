@@ -2,7 +2,7 @@
 // versions:
 // 	protoc-gen-go v1.27.1
 // 	protoc        (unknown)
-// source: proto/action.proto
+// source: proto/action/action.proto
 
 package action
 
@@ -50,11 +50,11 @@ func (x ActionType) String() string {
 }
 
 func (ActionType) Descriptor() protoreflect.EnumDescriptor {
-	return file_proto_action_proto_enumTypes[0].Descriptor()
+	return file_proto_action_action_proto_enumTypes[0].Descriptor()
 }
 
 func (ActionType) Type() protoreflect.EnumType {
-	return &file_proto_action_proto_enumTypes[0]
+	return &file_proto_action_action_proto_enumTypes[0]
 }
 
 func (x ActionType) Number() protoreflect.EnumNumber {
@@ -63,7 +63,7 @@ func (x ActionType) Number() protoreflect.EnumNumber {
 
 // Deprecated: Use ActionType.Descriptor instead.
 func (ActionType) EnumDescriptor() ([]byte, []int) {
-	return file_proto_action_proto_rawDescGZIP(), []int{0}
+	return file_proto_action_action_proto_rawDescGZIP(), []int{0}
 }
 
 type ActionRequest struct {
@@ -73,14 +73,14 @@ type ActionRequest struct {
 
 	Type ActionType `protobuf:"varint,1,opt,name=type,proto3,enum=action.ActionType" json:"type,omitempty"`
 	// Types that are assignable to Request_OneOf:
-	//	*ActionRequest_DeployReq
+	//	*ActionRequest_ReqDeploy
 	Request_OneOf isActionRequest_Request_OneOf `protobuf_oneof:"Request_OneOf"`
 }
 
 func (x *ActionRequest) Reset() {
 	*x = ActionRequest{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_proto_action_proto_msgTypes[0]
+		mi := &file_proto_action_action_proto_msgTypes[0]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -93,7 +93,7 @@ func (x *ActionRequest) String() string {
 func (*ActionRequest) ProtoMessage() {}
 
 func (x *ActionRequest) ProtoReflect() protoreflect.Message {
-	mi := &file_proto_action_proto_msgTypes[0]
+	mi := &file_proto_action_action_proto_msgTypes[0]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -106,7 +106,7 @@ func (x *ActionRequest) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use ActionRequest.ProtoReflect.Descriptor instead.
 func (*ActionRequest) Descriptor() ([]byte, []int) {
-	return file_proto_action_proto_rawDescGZIP(), []int{0}
+	return file_proto_action_action_proto_rawDescGZIP(), []int{0}
 }
 
 func (x *ActionRequest) GetType() ActionType {
@@ -123,9 +123,9 @@ func (m *ActionRequest) GetRequest_OneOf() isActionRequest_Request_OneOf {
 	return nil
 }
 
-func (x *ActionRequest) GetDeployReq() *ActionRequest_DeployRequest {
-	if x, ok := x.GetRequest_OneOf().(*ActionRequest_DeployReq); ok {
-		return x.DeployReq
+func (x *ActionRequest) GetReqDeploy() *ActionRequest_DeployRequest {
+	if x, ok := x.GetRequest_OneOf().(*ActionRequest_ReqDeploy); ok {
+		return x.ReqDeploy
 	}
 	return nil
 }
@@ -134,11 +134,11 @@ type isActionRequest_Request_OneOf interface {
 	isActionRequest_Request_OneOf()
 }
 
-type ActionRequest_DeployReq struct {
-	DeployReq *ActionRequest_DeployRequest `protobuf:"bytes,2,opt,name=deploy_req,json=deployReq,proto3,oneof"`
+type ActionRequest_ReqDeploy struct {
+	ReqDeploy *ActionRequest_DeployRequest `protobuf:"bytes,2,opt,name=req_deploy,json=reqDeploy,proto3,oneof"`
 }
 
-func (*ActionRequest_DeployReq) isActionRequest_Request_OneOf() {}
+func (*ActionRequest_ReqDeploy) isActionRequest_Request_OneOf() {}
 
 type ActionResponse struct {
 	state         protoimpl.MessageState
@@ -151,7 +151,7 @@ type ActionResponse struct {
 func (x *ActionResponse) Reset() {
 	*x = ActionResponse{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_proto_action_proto_msgTypes[1]
+		mi := &file_proto_action_action_proto_msgTypes[1]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -164,7 +164,7 @@ func (x *ActionResponse) String() string {
 func (*ActionResponse) ProtoMessage() {}
 
 func (x *ActionResponse) ProtoReflect() protoreflect.Message {
-	mi := &file_proto_action_proto_msgTypes[1]
+	mi := &file_proto_action_action_proto_msgTypes[1]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -177,7 +177,7 @@ func (x *ActionResponse) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use ActionResponse.ProtoReflect.Descriptor instead.
 func (*ActionResponse) Descriptor() ([]byte, []int) {
-	return file_proto_action_proto_rawDescGZIP(), []int{1}
+	return file_proto_action_action_proto_rawDescGZIP(), []int{1}
 }
 
 func (x *ActionResponse) GetText() string {
@@ -199,7 +199,7 @@ type ActionRequest_DeployRequest struct {
 func (x *ActionRequest_DeployRequest) Reset() {
 	*x = ActionRequest_DeployRequest{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_proto_action_proto_msgTypes[2]
+		mi := &file_proto_action_action_proto_msgTypes[2]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -212,7 +212,7 @@ func (x *ActionRequest_DeployRequest) String() string {
 func (*ActionRequest_DeployRequest) ProtoMessage() {}
 
 func (x *ActionRequest_DeployRequest) ProtoReflect() protoreflect.Message {
-	mi := &file_proto_action_proto_msgTypes[2]
+	mi := &file_proto_action_action_proto_msgTypes[2]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -225,7 +225,7 @@ func (x *ActionRequest_DeployRequest) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use ActionRequest_DeployRequest.ProtoReflect.Descriptor instead.
 func (*ActionRequest_DeployRequest) Descriptor() ([]byte, []int) {
-	return file_proto_action_proto_rawDescGZIP(), []int{0, 0}
+	return file_proto_action_action_proto_rawDescGZIP(), []int{0, 0}
 }
 
 func (x *ActionRequest_DeployRequest) GetName() string {
@@ -242,59 +242,59 @@ func (x *ActionRequest_DeployRequest) GetResourceUrl() string {
 	return ""
 }
 
-var File_proto_action_proto protoreflect.FileDescriptor
+var File_proto_action_action_proto protoreflect.FileDescriptor
 
-var file_proto_action_proto_rawDesc = []byte{
-	0x0a, 0x12, 0x70, 0x72, 0x6f, 0x74, 0x6f, 0x2f, 0x61, 0x63, 0x74, 0x69, 0x6f, 0x6e, 0x2e, 0x70,
-	0x72, 0x6f, 0x74, 0x6f, 0x12, 0x06, 0x61, 0x63, 0x74, 0x69, 0x6f, 0x6e, 0x22, 0xd6, 0x01, 0x0a,
-	0x0d, 0x41, 0x63, 0x74, 0x69, 0x6f, 0x6e, 0x52, 0x65, 0x71, 0x75, 0x65, 0x73, 0x74, 0x12, 0x26,
-	0x0a, 0x04, 0x74, 0x79, 0x70, 0x65, 0x18, 0x01, 0x20, 0x01, 0x28, 0x0e, 0x32, 0x12, 0x2e, 0x61,
-	0x63, 0x74, 0x69, 0x6f, 0x6e, 0x2e, 0x41, 0x63, 0x74, 0x69, 0x6f, 0x6e, 0x54, 0x79, 0x70, 0x65,
-	0x52, 0x04, 0x74, 0x79, 0x70, 0x65, 0x12, 0x44, 0x0a, 0x0a, 0x64, 0x65, 0x70, 0x6c, 0x6f, 0x79,
-	0x5f, 0x72, 0x65, 0x71, 0x18, 0x02, 0x20, 0x01, 0x28, 0x0b, 0x32, 0x23, 0x2e, 0x61, 0x63, 0x74,
-	0x69, 0x6f, 0x6e, 0x2e, 0x41, 0x63, 0x74, 0x69, 0x6f, 0x6e, 0x52, 0x65, 0x71, 0x75, 0x65, 0x73,
-	0x74, 0x2e, 0x44, 0x65, 0x70, 0x6c, 0x6f, 0x79, 0x52, 0x65, 0x71, 0x75, 0x65, 0x73, 0x74, 0x48,
-	0x00, 0x52, 0x09, 0x64, 0x65, 0x70, 0x6c, 0x6f, 0x79, 0x52, 0x65, 0x71, 0x1a, 0x46, 0x0a, 0x0d,
-	0x44, 0x65, 0x70, 0x6c, 0x6f, 0x79, 0x52, 0x65, 0x71, 0x75, 0x65, 0x73, 0x74, 0x12, 0x12, 0x0a,
-	0x04, 0x6e, 0x61, 0x6d, 0x65, 0x18, 0x01, 0x20, 0x01, 0x28, 0x09, 0x52, 0x04, 0x6e, 0x61, 0x6d,
-	0x65, 0x12, 0x21, 0x0a, 0x0c, 0x72, 0x65, 0x73, 0x6f, 0x75, 0x72, 0x63, 0x65, 0x5f, 0x75, 0x72,
-	0x6c, 0x18, 0x02, 0x20, 0x01, 0x28, 0x09, 0x52, 0x0b, 0x72, 0x65, 0x73, 0x6f, 0x75, 0x72, 0x63,
-	0x65, 0x55, 0x72, 0x6c, 0x42, 0x0f, 0x0a, 0x0d, 0x52, 0x65, 0x71, 0x75, 0x65, 0x73, 0x74, 0x5f,
-	0x4f, 0x6e, 0x65, 0x4f, 0x66, 0x22, 0x24, 0x0a, 0x0e, 0x41, 0x63, 0x74, 0x69, 0x6f, 0x6e, 0x52,
-	0x65, 0x73, 0x70, 0x6f, 0x6e, 0x73, 0x65, 0x12, 0x12, 0x0a, 0x04, 0x74, 0x65, 0x78, 0x74, 0x18,
-	0x01, 0x20, 0x01, 0x28, 0x09, 0x52, 0x04, 0x74, 0x65, 0x78, 0x74, 0x2a, 0x25, 0x0a, 0x0a, 0x41,
-	0x63, 0x74, 0x69, 0x6f, 0x6e, 0x54, 0x79, 0x70, 0x65, 0x12, 0x0b, 0x0a, 0x07, 0x4e, 0x4f, 0x54,
-	0x48, 0x49, 0x4e, 0x47, 0x10, 0x00, 0x12, 0x0a, 0x0a, 0x06, 0x44, 0x45, 0x50, 0x4c, 0x4f, 0x59,
-	0x10, 0x01, 0x42, 0x3d, 0x5a, 0x3b, 0x67, 0x69, 0x74, 0x68, 0x75, 0x62, 0x2e, 0x63, 0x6f, 0x6d,
-	0x2f, 0x64, 0x75, 0x6b, 0x68, 0x79, 0x75, 0x6e, 0x67, 0x6b, 0x69, 0x6d, 0x2f, 0x6c, 0x69, 0x62,
-	0x68, 0x61, 0x72, 0x61, 0x67, 0x6f, 0x2f, 0x67, 0x65, 0x6e, 0x2f, 0x67, 0x6f, 0x2f, 0x70, 0x72,
-	0x6f, 0x74, 0x6f, 0x2f, 0x61, 0x63, 0x74, 0x69, 0x6f, 0x6e, 0x3b, 0x61, 0x63, 0x74, 0x69, 0x6f,
-	0x6e, 0x62, 0x06, 0x70, 0x72, 0x6f, 0x74, 0x6f, 0x33,
+var file_proto_action_action_proto_rawDesc = []byte{
+	0x0a, 0x19, 0x70, 0x72, 0x6f, 0x74, 0x6f, 0x2f, 0x61, 0x63, 0x74, 0x69, 0x6f, 0x6e, 0x2f, 0x61,
+	0x63, 0x74, 0x69, 0x6f, 0x6e, 0x2e, 0x70, 0x72, 0x6f, 0x74, 0x6f, 0x12, 0x06, 0x61, 0x63, 0x74,
+	0x69, 0x6f, 0x6e, 0x22, 0xd6, 0x01, 0x0a, 0x0d, 0x41, 0x63, 0x74, 0x69, 0x6f, 0x6e, 0x52, 0x65,
+	0x71, 0x75, 0x65, 0x73, 0x74, 0x12, 0x26, 0x0a, 0x04, 0x74, 0x79, 0x70, 0x65, 0x18, 0x01, 0x20,
+	0x01, 0x28, 0x0e, 0x32, 0x12, 0x2e, 0x61, 0x63, 0x74, 0x69, 0x6f, 0x6e, 0x2e, 0x41, 0x63, 0x74,
+	0x69, 0x6f, 0x6e, 0x54, 0x79, 0x70, 0x65, 0x52, 0x04, 0x74, 0x79, 0x70, 0x65, 0x12, 0x44, 0x0a,
+	0x0a, 0x72, 0x65, 0x71, 0x5f, 0x64, 0x65, 0x70, 0x6c, 0x6f, 0x79, 0x18, 0x02, 0x20, 0x01, 0x28,
+	0x0b, 0x32, 0x23, 0x2e, 0x61, 0x63, 0x74, 0x69, 0x6f, 0x6e, 0x2e, 0x41, 0x63, 0x74, 0x69, 0x6f,
+	0x6e, 0x52, 0x65, 0x71, 0x75, 0x65, 0x73, 0x74, 0x2e, 0x44, 0x65, 0x70, 0x6c, 0x6f, 0x79, 0x52,
+	0x65, 0x71, 0x75, 0x65, 0x73, 0x74, 0x48, 0x00, 0x52, 0x09, 0x72, 0x65, 0x71, 0x44, 0x65, 0x70,
+	0x6c, 0x6f, 0x79, 0x1a, 0x46, 0x0a, 0x0d, 0x44, 0x65, 0x70, 0x6c, 0x6f, 0x79, 0x52, 0x65, 0x71,
+	0x75, 0x65, 0x73, 0x74, 0x12, 0x12, 0x0a, 0x04, 0x6e, 0x61, 0x6d, 0x65, 0x18, 0x01, 0x20, 0x01,
+	0x28, 0x09, 0x52, 0x04, 0x6e, 0x61, 0x6d, 0x65, 0x12, 0x21, 0x0a, 0x0c, 0x72, 0x65, 0x73, 0x6f,
+	0x75, 0x72, 0x63, 0x65, 0x5f, 0x75, 0x72, 0x6c, 0x18, 0x02, 0x20, 0x01, 0x28, 0x09, 0x52, 0x0b,
+	0x72, 0x65, 0x73, 0x6f, 0x75, 0x72, 0x63, 0x65, 0x55, 0x72, 0x6c, 0x42, 0x0f, 0x0a, 0x0d, 0x52,
+	0x65, 0x71, 0x75, 0x65, 0x73, 0x74, 0x5f, 0x4f, 0x6e, 0x65, 0x4f, 0x66, 0x22, 0x24, 0x0a, 0x0e,
+	0x41, 0x63, 0x74, 0x69, 0x6f, 0x6e, 0x52, 0x65, 0x73, 0x70, 0x6f, 0x6e, 0x73, 0x65, 0x12, 0x12,
+	0x0a, 0x04, 0x74, 0x65, 0x78, 0x74, 0x18, 0x01, 0x20, 0x01, 0x28, 0x09, 0x52, 0x04, 0x74, 0x65,
+	0x78, 0x74, 0x2a, 0x25, 0x0a, 0x0a, 0x41, 0x63, 0x74, 0x69, 0x6f, 0x6e, 0x54, 0x79, 0x70, 0x65,
+	0x12, 0x0b, 0x0a, 0x07, 0x4e, 0x4f, 0x54, 0x48, 0x49, 0x4e, 0x47, 0x10, 0x00, 0x12, 0x0a, 0x0a,
+	0x06, 0x44, 0x45, 0x50, 0x4c, 0x4f, 0x59, 0x10, 0x01, 0x42, 0x3d, 0x5a, 0x3b, 0x67, 0x69, 0x74,
+	0x68, 0x75, 0x62, 0x2e, 0x63, 0x6f, 0x6d, 0x2f, 0x64, 0x75, 0x6b, 0x68, 0x79, 0x75, 0x6e, 0x67,
+	0x6b, 0x69, 0x6d, 0x2f, 0x6c, 0x69, 0x62, 0x68, 0x61, 0x72, 0x61, 0x67, 0x6f, 0x2f, 0x67, 0x65,
+	0x6e, 0x2f, 0x67, 0x6f, 0x2f, 0x70, 0x72, 0x6f, 0x74, 0x6f, 0x2f, 0x61, 0x63, 0x74, 0x69, 0x6f,
+	0x6e, 0x3b, 0x61, 0x63, 0x74, 0x69, 0x6f, 0x6e, 0x62, 0x06, 0x70, 0x72, 0x6f, 0x74, 0x6f, 0x33,
 }
 
 var (
-	file_proto_action_proto_rawDescOnce sync.Once
-	file_proto_action_proto_rawDescData = file_proto_action_proto_rawDesc
+	file_proto_action_action_proto_rawDescOnce sync.Once
+	file_proto_action_action_proto_rawDescData = file_proto_action_action_proto_rawDesc
 )
 
-func file_proto_action_proto_rawDescGZIP() []byte {
-	file_proto_action_proto_rawDescOnce.Do(func() {
-		file_proto_action_proto_rawDescData = protoimpl.X.CompressGZIP(file_proto_action_proto_rawDescData)
+func file_proto_action_action_proto_rawDescGZIP() []byte {
+	file_proto_action_action_proto_rawDescOnce.Do(func() {
+		file_proto_action_action_proto_rawDescData = protoimpl.X.CompressGZIP(file_proto_action_action_proto_rawDescData)
 	})
-	return file_proto_action_proto_rawDescData
+	return file_proto_action_action_proto_rawDescData
 }
 
-var file_proto_action_proto_enumTypes = make([]protoimpl.EnumInfo, 1)
-var file_proto_action_proto_msgTypes = make([]protoimpl.MessageInfo, 3)
-var file_proto_action_proto_goTypes = []interface{}{
+var file_proto_action_action_proto_enumTypes = make([]protoimpl.EnumInfo, 1)
+var file_proto_action_action_proto_msgTypes = make([]protoimpl.MessageInfo, 3)
+var file_proto_action_action_proto_goTypes = []interface{}{
 	(ActionType)(0),                     // 0: action.ActionType
 	(*ActionRequest)(nil),               // 1: action.ActionRequest
 	(*ActionResponse)(nil),              // 2: action.ActionResponse
 	(*ActionRequest_DeployRequest)(nil), // 3: action.ActionRequest.DeployRequest
 }
-var file_proto_action_proto_depIdxs = []int32{
+var file_proto_action_action_proto_depIdxs = []int32{
 	0, // 0: action.ActionRequest.type:type_name -> action.ActionType
-	3, // 1: action.ActionRequest.deploy_req:type_name -> action.ActionRequest.DeployRequest
+	3, // 1: action.ActionRequest.req_deploy:type_name -> action.ActionRequest.DeployRequest
 	2, // [2:2] is the sub-list for method output_type
 	2, // [2:2] is the sub-list for method input_type
 	2, // [2:2] is the sub-list for extension type_name
@@ -302,13 +302,13 @@ var file_proto_action_proto_depIdxs = []int32{
 	0, // [0:2] is the sub-list for field type_name
 }
 
-func init() { file_proto_action_proto_init() }
-func file_proto_action_proto_init() {
-	if File_proto_action_proto != nil {
+func init() { file_proto_action_action_proto_init() }
+func file_proto_action_action_proto_init() {
+	if File_proto_action_action_proto != nil {
 		return
 	}
 	if !protoimpl.UnsafeEnabled {
-		file_proto_action_proto_msgTypes[0].Exporter = func(v interface{}, i int) interface{} {
+		file_proto_action_action_proto_msgTypes[0].Exporter = func(v interface{}, i int) interface{} {
 			switch v := v.(*ActionRequest); i {
 			case 0:
 				return &v.state
@@ -320,7 +320,7 @@ func file_proto_action_proto_init() {
 				return nil
 			}
 		}
-		file_proto_action_proto_msgTypes[1].Exporter = func(v interface{}, i int) interface{} {
+		file_proto_action_action_proto_msgTypes[1].Exporter = func(v interface{}, i int) interface{} {
 			switch v := v.(*ActionResponse); i {
 			case 0:
 				return &v.state
@@ -332,7 +332,7 @@ func file_proto_action_proto_init() {
 				return nil
 			}
 		}
-		file_proto_action_proto_msgTypes[2].Exporter = func(v interface{}, i int) interface{} {
+		file_proto_action_action_proto_msgTypes[2].Exporter = func(v interface{}, i int) interface{} {
 			switch v := v.(*ActionRequest_DeployRequest); i {
 			case 0:
 				return &v.state
@@ -345,26 +345,26 @@ func file_proto_action_proto_init() {
 			}
 		}
 	}
-	file_proto_action_proto_msgTypes[0].OneofWrappers = []interface{}{
-		(*ActionRequest_DeployReq)(nil),
+	file_proto_action_action_proto_msgTypes[0].OneofWrappers = []interface{}{
+		(*ActionRequest_ReqDeploy)(nil),
 	}
 	type x struct{}
 	out := protoimpl.TypeBuilder{
 		File: protoimpl.DescBuilder{
 			GoPackagePath: reflect.TypeOf(x{}).PkgPath(),
-			RawDescriptor: file_proto_action_proto_rawDesc,
+			RawDescriptor: file_proto_action_action_proto_rawDesc,
 			NumEnums:      1,
 			NumMessages:   3,
 			NumExtensions: 0,
 			NumServices:   0,
 		},
-		GoTypes:           file_proto_action_proto_goTypes,
-		DependencyIndexes: file_proto_action_proto_depIdxs,
-		EnumInfos:         file_proto_action_proto_enumTypes,
-		MessageInfos:      file_proto_action_proto_msgTypes,
+		GoTypes:           file_proto_action_action_proto_goTypes,
+		DependencyIndexes: file_proto_action_action_proto_depIdxs,
+		EnumInfos:         file_proto_action_action_proto_enumTypes,
+		MessageInfos:      file_proto_action_action_proto_msgTypes,
 	}.Build()
-	File_proto_action_proto = out.File
-	file_proto_action_proto_rawDesc = nil
-	file_proto_action_proto_goTypes = nil
-	file_proto_action_proto_depIdxs = nil
+	File_proto_action_action_proto = out.File
+	file_proto_action_action_proto_rawDesc = nil
+	file_proto_action_action_proto_goTypes = nil
+	file_proto_action_action_proto_depIdxs = nil
 }
