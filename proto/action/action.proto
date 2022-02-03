@@ -11,8 +11,9 @@ enum ActionType {
 
 message ActionRequest {
   ActionType type = 1;
+  string space = 2;
   oneof Request_OneOf {
-    DeployRequest req_deploy = 2;
+    DeployRequest req_deploy = 3;
   }
 
   message DeployRequest {
@@ -23,4 +24,5 @@ message ActionRequest {
 
 message ActionResponse {
   string text = 1;
+  string space = 2;
 }
