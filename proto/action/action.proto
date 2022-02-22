@@ -30,8 +30,9 @@ message ActionResponse {
   }
 
   message DeployResponse {
-    string company = 1;
-    string resource_url = 2;
-    string text = 3;
+    string host = 1;
+    string company = 2;
+    string resource_url = 3;
+    string text = 4;
   }
 }
