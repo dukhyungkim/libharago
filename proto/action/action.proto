@@ -6,7 +6,7 @@ option go_package = "github.com/dukhyungkim/libharago/gen/go/proto/action;action
 
 enum ActionType {
   NOTHING = 0;
-  DEPLOY = 1;
+  UP = 1;
   DOWN = 2;
 }
 
